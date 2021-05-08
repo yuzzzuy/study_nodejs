@@ -16,6 +16,7 @@
  *        1024t = 1b
  *
  *        buffer 中的一个元素，占用内存的一个字节
+ *        buffer的大小一旦确定，不能修改. 实质上对底层内存的直接使用
  */
 let str = "Hello 孙悟空";
 
@@ -26,5 +27,34 @@ console.log(buf);
 console.log(buf.length); //占用内存的大小
 console.log(str.length); //字符串的长度
 
+//创建一个指定大小的buffer
+//buffer 构造函数都是不推荐使用的
+// let buf2 = new Buffer(1024);
+// console.log(buf2)
 
+//创建一个10个字节的buffer
+let buf3 = Buffer.alloc(10);
+console.log(buf3)
 
+//通过索引，来操作buf中的元素
+buf3[0] = 88 ;
+buf3[1] = 255 ;
+buf3[2] =  0xaa;
+buf3[3] =  256;
+//只要数字在控制台或页面中输出一定是十进制
+console.log(buf3[2].toString(16));
+
+for (let i = 0; i < buf3.length; i++) {
+    console.log(buf3[i]);
+}
+
+//Buffer.allocUnsafe(size) 创建一个指定大小的饿buffer,但是buffer中可能含有敏感数据
+let unsafe = Buffer.allocUnsafe(10);
+console.log(unsafe);
+
+/**
+ * Buffer.from(str) 将一个字符转换为buffer
+ * Buffer.alloc(size) 创建一个指定大小的buffer
+ * Buffer.allocUnsafe(size) 创建一个指定大小的buffer 但是可能包含敏感数据
+ * buf.toString() 将缓存区中的数据转换为字符串
+ */
