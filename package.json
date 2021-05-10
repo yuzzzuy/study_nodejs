@@ -1,7 +1,6 @@
 {
   "name": "study_nodejs",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "math": "0.0.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuzzzuy/study_nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuzzzuy/study_nodejs/issues"
+  },
+  "homepage": "https://github.com/yuzzzuy/study_nodejs#readme",
+  "description": ""
 }
